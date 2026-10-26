@@ -375,7 +375,7 @@
     <div class="chart-wrap"><canvas id="chart"></canvas><div class="chart-empty" id="chartEmpty">Carregando histórico…</div></div>
   </div>
 
-  <div class="box-title">Distribuição das ordens <span class="tag">estimado</span></div>
+  <div class="box-title">Distribuição das ordens <span class="tag">estimado</span> <span id="distNote" style="font-weight:400;color:#647a97"></span></div>
   <div class="dist-wrap"><canvas id="distChart"></canvas></div>
 
   <div class="box-title">Notícias <span class="tag">Google News</span></div>
@@ -678,10 +678,12 @@ async function refreshDetail() {
     const h = await res.json();
     state.hist = h;
     $('chartNote').textContent = `· ${h.range_label} · ${h.interval_label}`;
+    $('distNote').textContent = `· ${h.range_label} · ${fmtNum(h.candles.reduce((a, c) => a + c.ob + c.os, 0))} ordens estimadas`;
     drawPriceChart(h.candles, h.interval);
     drawDistribution(h.candles, h.interval);
   } catch (e) {
     $('chartNote').textContent = '· histórico indisponível';
+    $('distNote').textContent = '';
     $('chartEmpty').style.display = 'grid';
     $('chartEmpty').textContent = 'Não foi possível carregar o histórico agora.';
   }
@@ -784,6 +786,7 @@ function openDrawer(ticker) {
   $('newsList').innerHTML = '';
   $('loadNews').textContent = 'Carregar notícias';
   $('chartNote').textContent = '';
+  $('distNote').textContent = '';
   refreshDetail();
 }
 
