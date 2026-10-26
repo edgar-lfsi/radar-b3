@@ -88,7 +88,7 @@ python scripts/build_report.py
 2. **A B3 não identifica CPF/CNPJ** de compradores e vendedores e não divulga o agressor em tempo real
    de forma pública. O número de ordens é estimado pelo tamanho médio de negócio do pregão anterior.
 3. **O histórico pode ter atraso** e depende de fontes gratuitas (Yahoo/brapi). O primeiro carregamento
-   de um período pode levar alguns segundos.
+   de um período pode levar de segundos a ~40s; depois fica em cache por 6h.
 4. **Não é recomendação de investimento.**
 
 ## Segurança e privacidade
