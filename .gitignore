@@ -1,0 +1,15 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+.env
+.env.*
+*.log
+.DS_Store
+Thumbs.db
+
+# dados brutos e cache (grandes e reproduzíveis)
+data/raw/
+data/cache/
