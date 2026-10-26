@@ -3,6 +3,8 @@
 Painel em tempo real e análise de liquidez para **ações da B3**, usando apenas **dados públicos** e
 sem conexão com home broker.
 
+[![GitHub](https://img.shields.io/badge/GitHub-edgar--lfsi%2Fradar--b3-181717?logo=github)](https://github.com/edgar-lfsi/radar-b3)
+
 ![Painel Radar B3](dashboard_preview.png)
 
 ## O que tem aqui
@@ -40,6 +42,8 @@ Ao clicar em uma linha:
 - **gráfico de distribuição das ordens estimadas** ao longo do período;
 - **notícias** da empresa, carregadas ao clique (Google News);
 - botão de **tela cheia** no gráfico.
+
+![Detalhe da ação](dashboard_drawer.png)
 
 ### Atualização
 
